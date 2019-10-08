@@ -951,10 +951,10 @@ void G_DeathMatchSpawnPlayer (int playernum)
     int				selections; 
 	 
     selections = deathmatch_p - deathmatchstarts; 
-    if (selections < 4) 
-       {
-	    I_Error ("Only %i deathmatch spots, 4 required", selections); 
-       }
+    // vrodic: 04-05-98 replaced 4 with doomcom->numplayers
+    if (selections < doomcom->numplayers)
+	I_Error ("Only %i deathmatch spots, %d required",
+		 selections,doomcom->numplayers);
  
     for (j=0 ; j<20 ; j++) 
     { 
@@ -1404,11 +1404,16 @@ G_DeferedInitNew
 
 void G_DoNewGame (void) 
 {
+	int i;
+
     demoplayback = false; 
     netdemo = false;
     netgame = false;
     deathmatch = false;
-    playeringame[1] = playeringame[2] = playeringame[3] = 0;
+    // vrodic: 04-05-98 do it for MAXPLAYERS instead of 1,2,3 (usefull ?)
+    for(i=1;i<MAXPLAYERS;i++)
+		playeringame[i] = 0;
+
     respawnparm = false;
     fastparm = false;
     nomonsters = false;
@@ -2019,6 +2024,8 @@ boolean G_CheckDemoStatus (void)
 	 
     if (demoplayback) 
     { 
+	int i;
+
 	if (singledemo) 
 	    I_Quit (); 
 			 
@@ -2027,7 +2034,9 @@ boolean G_CheckDemoStatus (void)
 	netdemo = false;
 	netgame = false;
 	deathmatch = false;
-	playeringame[1] = playeringame[2] = playeringame[3] = 0;
+	// vrodic: 04-05-98 do it for MAXPLAYERS instead of 1,2,3 (usefull ?)
+	for(i=1;i<MAXPLAYERS;i++)
+	  playeringame[i] = 0;
 	respawnparm = false;
 	fastparm = false;
 	nomonsters = false;

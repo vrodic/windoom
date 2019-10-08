@@ -869,13 +869,8 @@ int V_StringWidth (char* string)
 void V_Init (void) 
    { 
     int		i, j, x;
-    //byte*	base;
     DWORD  *buff;
 		
-    // stick these in low dos memory on PCs
-
-    //base = I_AllocLow (SCREENWIDTH*SCREENHEIGHT*4);
-
     for (i = 0; i < 5; i++)
        {
         x = SCREENWIDTH * SCREENHEIGHT;
@@ -885,5 +880,4 @@ void V_Init (void)
         for (j = 0; j < x; j++)
            buff[j] = 0x00000000;
        }
-//  screens[i] = base + i*SCREENWIDTH*SCREENHEIGHT;
    }

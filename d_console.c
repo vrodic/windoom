@@ -260,7 +260,7 @@ char *cmdlist[] = { "iddqd : god mode",
                     "god : enable god mode (degreelessness?) toggle",
                     "map : e?m? or map?? (Doom I or Doom II map names)",
                     "noclip : no clipping toggle",
-                    "give all : gives full ammo,armor,health,weapons,keys",
+                    "give all : gives full ammo,armor,health,weapons,keys,backpack",
                     "give ammo : gives full ammo",
                     "give armor : gives full armor",
                     "give health : give 100% health",
@@ -964,7 +964,15 @@ int CO_HandleCommand(char *cmd)
         if (strnicmp(cmd, "give ", 5) == 0)
            {
             if (stricmp(&cmd[5], "all") == 0)
-               {
+               { 
+	            // vrodic: 04-04-1998: give all now gives backpack too
+				if (!plyr->backpack)
+	               {
+	                for (i = 0; i < NUMAMMO; i++)
+		                 plyr->maxammo[i] *= 2;
+	                plyr->backpack = true;
+	               }
+				////////////////////////////////////
                 for (i = 0;i < NUMAMMO; i++)
                    plyr->ammo[i] = plyr->maxammo[i];
                 for (i = 0;i < NUMWEAPONS; i++)

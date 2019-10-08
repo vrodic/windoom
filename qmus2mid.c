@@ -21,7 +21,6 @@
 
 /* Hacked for DOOM Win32 port by Petteri Kangaslampi <pekangas@sci.fi> */
 
-//#define MSDOG
 
 #include <ctype.h>
 #include <stdio.h>
@@ -35,15 +34,7 @@
 #endif
 
 
-#ifdef MSDOG
-#include <io.h>
-#include <dir.h>
-//#include <pc.h>
-#include <process.h>
-//#include <keys.h>
-#else
 #include <sys/types.h>
-#endif
 
 #include <sys/stat.h>
 
@@ -52,10 +43,6 @@
 FILE *file_mus, *file_mid ;
 
 int4 TRACKBUFFERSIZE = 65536L ;  /* 64 Ko */
-
-#ifdef MSDOG
-char tmp[MAXPATH] ;
-#endif
 
 size_t fwrite2(const int2 *ptr, size_t size, FILE *file)
 {
@@ -79,14 +66,6 @@ void FreeTracks( struct Track track[] )
 }
 
 
-#ifdef MSDOG
-void Close( void )
-{
-    fclose(file_mus);
-    fclose(file_mid);
-    unlink( tmp ) ;
-}
-#else
 
 #define Close()
 
@@ -96,8 +75,6 @@ char LittleEndian(void)
   char *p = (char *) &i;
   return *p;
 }
-
-#endif
 
 
 void TWriteByte( char MIDItrack, char byte, struct Track track[] )
@@ -526,21 +503,8 @@ int qmus2mid( const char *mus, const char *mid, int nodisplay,
            (100 * n) / (n+ (int4) ftell( file_mid )) ) ;
 
   FreeTracks( track ) ;
-#ifdef MSDOG
   fclose(file_mus);
   fclose(file_mid);
-  if( !access( mid, 0 ) )
-    if( unlink( mid ) )
-      return( CWMIDFILE ) ;
-
-  if( rename( tmp, mid ) )
-    return( CWMIDFILE ) ;
-
-#else
-  fclose(file_mus);
-  fclose(file_mid);
-#endif
-
   return 0 ;
 }
 
@@ -559,15 +523,6 @@ int convert( const char *mus, const char *mid, int nodisplay, int div,
 
   /* we don't need _all_ that checking, do we ? */
   /* Answer : it's more user-friendly */
-#ifdef MSDOG
-
-  if( access( mus, 0 ) )
-    {
-      printf( "ERROR : %s does not exist.\n", mus ) ;
-      return 1 ;
-    }
-
-#else
   if ( !*ow ) {
     file = fopen(mid, "r");
     if ( file ) {
@@ -576,7 +531,6 @@ int convert( const char *mus, const char *mid, int nodisplay, int div,
       return 2 ;
     }
   }
-#endif
 
   error = qmus2mid( mus, mid, nodisplay, div, size, nocomp ) ;
 
@@ -621,53 +575,6 @@ int convert( const char *mus, const char *mid, int nodisplay, int div,
 }
 
 
-int CheckParm( char *check, int argc, char *argv[] )
-{
-  int i;
 
-  for ( i = 1 ; i<argc ; i++ )
-#ifdef MSDOG
-    if( !stricmp( check, argv[i] ) )
-#else
-    if( !strcmp( check, argv[i] ) )
-#endif
-      return i ;
-
-  return 0;
-}
-
-
-void PrintHeader( void )
-{
-/*  Print( "===============================================================================\n"
-         "              Quick MUS->MID v2.0 ! (C) 1995,96 Sebastien Bacquet\n"
-         "                        E-mail : bacquet@iie.cnam.fr\n"
-         "===============================================================================\n" ) ;*/
-}
-
-
-void PrintSyntax( void )
-{
-  PrintHeader() ;
-  printf(
-#ifdef MSDOG
-         "\nSyntax : QMUS2MID musfile1[.mus] {musfile2[.mus] ... | "
-         "midifile.mid} [options]\n"
-         "   Wildcards are accepted.\n"
-         "   Options are :\n"
-         "     -query    : Query before processing\n"
-         "     -ow       : OK, overwrite (without query)\n"
-#else
-         "\nSyntax : QMUS2MID musfile midifile [options]\n"
-         "   Options are :\n"
-#endif
-         "     -noow     : Don't overwrite !\n"
-         "     -nodisp   : Display nothing ! (except errors)\n"
-         "     -nocomp   : Don't compress !\n"
-         "     -size ### : Set the track buffer size to ### (in KB). "
-         "Default = 64 KB\n"
-         "     -t ###    : Ticks per quarter note. Default = 89\n"
-         ) ;
-}
 
 

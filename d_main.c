@@ -332,7 +332,7 @@ void D_Display (void)
     // draw pause pic
     if (paused)
        {
-        if (automapactive)
+        if (automapactive) 
             y = 4;
         else
             y = viewwindowy+4;
@@ -1189,48 +1189,7 @@ void D_DoomMain (void)
     //printf ("%s\n",title);
     WriteDebug(title);
     WriteDebug("\n");
-   
-    
-    // If additonal PWAD files are used, print modified banner
-    if (modifiedgame)
-    {
-	 //printf (
-	    WriteDebug("===========================================================================\n");
-	    WriteDebug("ATTENTION:  This version of DOOM has been modified.  If you would like to\n");
-	    WriteDebug("get a copy of the original game, call 1-800-IDGAMES or see the readme file.\n");
-	    WriteDebug("        You will not receive technical support for modified games.\n");
-	    WriteDebug("===========================================================================\n");
-	//    );
-    }
-	
-
-    // Check and print which version is executed.
-    switch ( gamemode )
-    {
-      case shareware:
-      case indetermined:
-	//printf (
-	    WriteDebug("===========================================================================\n");
-	    WriteDebug("                                Shareware!\n");
-	    WriteDebug("===========================================================================\n");
-	//);
-	break;
-      case registered:
-      case retail:
-      case commercial:
-	//printf (
-	    WriteDebug("===========================================================================\n");
-	    WriteDebug("                 Commercial product - do not distribute!\n");
-	    WriteDebug("         Please report software piracy to the SPA: 1-800-388-PIR8\n");
-	    WriteDebug("===========================================================================\n");
-	//);
-	break;
-	
-      default:
-	// Ouch.
-	break;
-    }
-
+     
     //printf ("M_Init: Init miscellaneous info.\n");
     WriteDebug("M_Init: Init miscellaneous info.\n");
     M_Init ();

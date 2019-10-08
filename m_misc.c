@@ -447,14 +447,8 @@ void M_LoadDefaults (void)
 
     numChannels = GetPrivateProfileInt("DEFAULTS", "snd_channels", 256, DoomDir);
    }
-/*
-snd_musicdevice		3
-snd_sfxdevice		3
-snd_sbport		544
-snd_sbirq		5
-snd_sbdma		1
-snd_mport		816
 
+/*
 chatmacro0		"no macro"
 chatmacro1		"no macro"
 chatmacro2		"no macro"
@@ -592,7 +586,7 @@ void M_ScreenShot (void)
 		  SCREENWIDTH, SCREENHEIGHT,
 		  W_CacheLumpName ("PLAYPAL",PU_CACHE));
 	
-    players[consoleplayer].message = "screen shot";
+	players[consoleplayer].message = "screen shot";
 }
 
 
