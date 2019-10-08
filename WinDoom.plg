@@ -1,0 +1,96 @@
+--------------------Configuration: WinDoom - Win32 Release--------------------
+Begining build with project "C:\DOOMSRC\windoom\WinDoom.dsp", at root.
+Active configuration is Win32 (x86) Application (based on Win32 (x86) Application)
+
+Project's tools are:
+			"32-bit C/C++ Compiler for 80x86" with flags "/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp".\Release/WinDoom.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c "
+			"OLE Type Library Maker" with flags "/nologo /D "NDEBUG" /mktyplib203 /win32 "
+			"Win32 Resource Compiler" with flags "/l 0x409 /fo".\Release/windoom.res" /d "NDEBUG" "
+			"Browser Database Maker" with flags "/nologo /o".\Release/WinDoom.bsc" "
+			"COFF Linker for 80x86" with flags "dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib dsound.lib ddraw.lib dinput.lib winmm.lib wsock32.lib /nologo /subsystem:windows /incremental:no /pdb:".\Release/WinDoom.pdb" /machine:I386 /out:".\Release/WinDoom.exe" "
+			"Custom Build" with flags ""
+			"<Component 0xa>" with flags ""
+
+Creating temp file "C:\WINDOWS\TEMP\RSP1034.TMP" with contents </nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp".\Release/WinDoom.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c 
+"C:\DOOMSRC\windoom\m_menu.c"
+>
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP1034.TMP" 
+Creating temp file "C:\WINDOWS\TEMP\RSP1035.TMP" with contents <dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib dsound.lib ddraw.lib dinput.lib winmm.lib wsock32.lib /nologo /subsystem:windows /incremental:no /pdb:".\Release/WinDoom.pdb" /machine:I386 /out:".\Release/WinDoom.exe" 
+.\Release\am_map.obj
+.\Release\d_console.obj
+.\Release\d_items.obj
+.\Release\d_main.obj
+.\Release\d_net.obj
+.\Release\doomdef.obj
+.\Release\doomstat.obj
+.\Release\dstrings.obj
+.\Release\dxerr.obj
+.\Release\f_finale.obj
+.\Release\f_wipe.obj
+.\Release\g_game.obj
+.\Release\hu_lib.obj
+.\Release\hu_stuff.obj
+.\Release\i_cd.obj
+.\Release\i_main.obj
+.\Release\i_midi.obj
+.\Release\i_net.obj
+.\Release\i_sound.obj
+.\Release\i_system.obj
+.\Release\i_video.obj
+.\Release\info.obj
+.\Release\m_argv.obj
+.\Release\m_bbox.obj
+.\Release\m_cheat.obj
+.\Release\m_fixed.obj
+.\Release\m_menu.obj
+.\Release\m_misc.obj
+.\Release\m_music.obj
+.\Release\m_random.obj
+.\Release\m_swap.obj
+.\Release\p_ceilng.obj
+.\Release\p_doors.obj
+.\Release\p_enemy.obj
+.\Release\p_floor.obj
+.\Release\p_inter.obj
+.\Release\p_lights.obj
+.\Release\p_map.obj
+.\Release\p_maputl.obj
+.\Release\p_mobj.obj
+.\Release\p_plats.obj
+.\Release\p_pspr.obj
+.\Release\p_saveg.obj
+.\Release\p_setup.obj
+.\Release\p_sight.obj
+.\Release\p_spec.obj
+.\Release\p_switch.obj
+.\Release\p_telept.obj
+.\Release\p_tick.obj
+.\Release\p_user.obj
+.\Release\qmus2mid.obj
+.\Release\r_bsp.obj
+.\Release\r_data.obj
+.\Release\r_draw.obj
+.\Release\r_main.obj
+.\Release\r_plane.obj
+.\Release\r_segs.obj
+.\Release\r_sky.obj
+.\Release\r_things.obj
+.\Release\s_sound.obj
+.\Release\sounds.obj
+.\Release\st_lib.obj
+.\Release\st_stuff.obj
+.\Release\tables.obj
+.\Release\v_video.obj
+.\Release\w_wad.obj
+.\Release\wi_stuff.obj
+.\Release\WINDOOM.obj
+.\Release\z_zone.obj
+.\Release\windoom.res>
+Creating command line "link.exe @C:\WINDOWS\TEMP\RSP1035.TMP" 
+Compiling...
+m_menu.c
+Linking...
+
+
+
+WinDoom.exe - 0 error(s), 0 warning(s)

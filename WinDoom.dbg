@@ -1,0 +1,36 @@
+CDDevice ID = 1
+CD Player is empty...
+Platform is Windows 9X Version 4.00.1111
+Windows Info:  B
+Resolution: 320 x 200
+Mode count : 22
+DirectDraw Video Mode List
+Mode Width x Height x Color Bits ModeX
+ 0     320     200         8      No
+ 3     320     240         8      No
+ 6     400     300         8      No
+ 9     512     384         8      No
+12     640     400         8      No
+14     640     480         8      No
+17     800     600         8      No
+20    1024     768         8      No
+DirectDraw Back Buffer Surface Description:
+Screen Width 320, Height 200, Surface Pitch 640
+WinDoom Version  0.95
+Game mode indeterminate.
+V_Init: allocate screens.
+M_LoadDefaults: Load system defaults.
+Z_Init: Init zone memory allocation daemon. 
+W_Init: Init WADfiles.
+Error: W_InitFiles: no files found
+Exiting WinDoom...
+Running ShutdownDirectDraw...
+Restored display mode...
+Reset cooperative level...
+Shutdown DirectDraw Complete...
+                     Public DOOM - v1.9                           
+===========================================================================
+                                Shareware!
+===========================================================================
+M_Init: Init miscellaneous info.
+R_Init: Init DOOM refresh daemon - 
