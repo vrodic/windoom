@@ -256,9 +256,6 @@ int qmus2mid( const char *mus, const char *mid, int nodisplay,
     0x79                        /* Reset all controllers */
   }, MIDIchan2track[16] ;
   signed char MUS2MIDchannel[16] ;
-#ifdef MSDOG
-  char drive[MAXDRIVE], dir[MAXDIR], name[MAXFILE], ext[MAXEXT] ;
-#endif
   char ouch = 0, sec ;
   struct stat file_data ;
 
@@ -266,24 +263,8 @@ int qmus2mid( const char *mus, const char *mid, int nodisplay,
     return COMUSFILE ;
   stat( mus, &file_data ) ;
 
-#ifdef MSDOG
-  fnsplit( mid, drive, dir, name, ext ) ;
-  fnmerge( tmp, drive, dir, "tempmid", ".tmp" ) ;
-
-  if( (file_mid = fopen( tmp, "wb" )) == NULL )
-    {
-      Close() ;
-      return COTMPFILE ;
-    }
-
-#else
-
-  /*  Why bother with a tmp-file anyway ? */
-  /*  If I could have done differently...You know, DOS is DOS... */
-
   if( (file_mid = fopen( mid, "wb" )) == NULL )
     return CWMIDFILE ;
-#endif
 
   r = ReadMUSheader( &MUSh, file_mus ) ;
   if( r )
@@ -514,9 +495,6 @@ int convert( const char *mus, const char *mid, int nodisplay, int div,
 {
   FILE *file ;
   int error;
-#ifdef MSDOG
-  int n ;
-#endif
   struct stat file_data ;
   char buffer[30] ;
 

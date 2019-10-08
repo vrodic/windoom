@@ -154,8 +154,6 @@ byte*	I_AllocLow(int length)
 //
 extern int     demotype;
 extern boolean demorecording;
-extern int GameMode;
-#define GAME_QUIT 5
 
 void I_Error (char *error, ...)
 {

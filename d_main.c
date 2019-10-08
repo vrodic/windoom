@@ -713,9 +713,7 @@ void IdentifyVersion (void)
     doom1wad = malloc(strlen(doomwaddir)+1+9+1);
     sprintf(doom1wad, "%s/doom1.wad", doomwaddir);
 
-     // Bug, dear Shawn.
-    // Insufficient malloc, caused spurious realloc errors.
-    plutoniawad = malloc(strlen(doomwaddir)+1+/*9*/12+1);
+    plutoniawad = malloc(strlen(doomwaddir)+1+12+1);
     sprintf(plutoniawad, "%s/plutonia.wad", doomwaddir);
 
     tntwad = malloc(strlen(doomwaddir)+1+9+1);

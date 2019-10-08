@@ -76,24 +76,13 @@ typedef enum
 // For resize of screen, at start of game.
 // It will not work dynamically, see visplanes.
 //
-#define	BASE_WIDTH		320
 
-// It is educational but futile to change this
-//  scaling e.g. to 2. Drawing of status bar,
-//  menues etc. is tied to the scale implied
-//  by the graphics.
-#define	SCREEN_MUL		1
-#define	INV_ASPECT_RATIO	0.625 // 0.75, ideally
 
 // Defines suck. C sucks.
 // C++ might sucks for OOP, but it sure is a better C.
 // So there.
-//#define SCREENWIDTH  640
 extern int SCREENWIDTH;
-//SCREEN_MUL*BASE_WIDTH //320
-//#define SCREENHEIGHT 480
 extern int SCREENHEIGHT;
-//(int)(SCREEN_MUL*BASE_WIDTH*INV_ASPECT_RATIO) //200
 
 
 // The maximum number of players, multiplayer/networking.
