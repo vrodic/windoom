@@ -673,7 +673,8 @@ void R_DrawPSprite (pspdef_t* psp)
     flip = (boolean)sprframe->flip[0];
     
     // calculate edges of the shape
-    tx = psp->sx-160*FRACUNIT;
+    // vrodic:07-04-98:replaced mul by shift
+    tx = psp->sx-(/*(BASEVIDWIDTH/2)*/160<<FRACBITS); //*FRACUNITS);
 	
     tx -= spriteoffset[lump];	
     x1 = (centerxfrac + FixedMul (tx,pspritescale) ) >>FRACBITS;

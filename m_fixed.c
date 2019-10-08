@@ -27,9 +27,34 @@
 
 
 
+//vrodic: 04-06-1998 - added asm code
+
+fixed_t FixedMul (fixed_t a, fixed_t b)
+{
+	__asm {
+		mov		eax,a
+		imul	b
+		shrd	eax,edx,16
+	}
+}
+
+fixed_t FixedDiv (fixed_t a, fixed_t b)
+{
+	if ((abs (a) >> 14) >= abs(b))
+		return (a^b)<0 ? MININT : MAXINT;
+
+	__asm {
+		mov		eax,a			// u  (eax = aaaaAAAA)
+		mov		edx,a			// v  (edx = aaaaAAAA)
+		shl		eax,16			// u  (eax = AAAA0000)
+		sar		edx,16			// v  (edx = ----aaaa)
+		idiv	b				// np
+	}
+}
+
 
 //__USE_C_FIXED__ or something.
-
+/*
 fixed_t FixedMul( fixed_t a, fixed_t b )
    {
     return (((__int64) a * (__int64) b) >> FRACBITS);
@@ -72,3 +97,4 @@ FixedDiv2
 	I_Error("FixedDiv: divide by zero");
     return (fixed_t) c;
 }
+*/
