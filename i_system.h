@@ -71,11 +71,6 @@ ticcmd_t* I_BaseTiccmd (void);
 // Clean exit, displays sell blurb.
 void I_Quit (void);
 
-
-
-void I_Tactile (int on, int off, int total);
-
-
 void I_Error (char *error, ...);
 
 

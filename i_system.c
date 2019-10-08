@@ -43,16 +43,6 @@ void WriteDebug(char *);
 int	mb_used = 6;
 
 
-void
-I_Tactile
-( int	on,
-  int	off,
-  int	total )
-{
-  // UNUSED.
-  on = off = total = 0;
-}
-
 ticcmd_t	emptycmd;
 ticcmd_t*	I_BaseTiccmd(void)
 {
@@ -137,15 +127,6 @@ void I_BeginRead(void)
 
 void I_EndRead(void)
 {
-}
-
-byte*	I_AllocLow(int length)
-{
-    byte*	mem;
-        
-    mem = (byte *)malloc (length);
-    memset (mem,0,length);
-    return mem;
 }
 
 

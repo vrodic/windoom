@@ -95,40 +95,6 @@ int 		lengths[NUMSFX];
 int	audio_fd;
 
 
-
-
-// Pitch to stepping lookup, unused.
-int		steptable[256];
-
-
-//
-// Safe ioctl, convenience.
-//
-void
-myioctl
-( int	fd,
-  int	command,
-  int*	arg )
-{   
-// FIXME
-/*
-    int		rc;
-    extern int	errno;
-    
-    rc = ioctl(fd, command, arg);  
-    if (rc < 0)
-    {
-	fprintf(stderr, "ioctl(dsp,%d,arg) failed\n", command);
-	fprintf(stderr, "errno=%d\n", errno);
-	exit(-1);
-    }
-*/
-}
-
-
-
-
-
 //
 // This function loads the sound data from the WAD lump,
 //  for single sound.
@@ -212,7 +178,7 @@ void *getsfx( char *sfxname, int *len )
 //  (eight, usually) of internal channels.
 // Returns a handle.
 //
-int addsfx( int sfxid, int volume, int step, int seperation, void *origin )
+int addsfx( int sfxid, int volume, int seperation, void *origin )
    {
     int		i;
 
@@ -417,7 +383,7 @@ int I_StartSound( int id, int vol, int sep, int pitch, int priority, void *origi
 //    WriteDebug(MsgText);
     
     // Returns a handle (not used).
-    id = addsfx( id, vol, steptable[pitch], sep, origin );
+    id = addsfx( id, vol, sep, origin );
 
 //    sprintf(MsgText, "/handle is %d\n", id );
 //    WriteDebug(MsgText);
