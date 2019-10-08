@@ -202,6 +202,7 @@ typedef struct
 
 KeyDef_t cvars[] = { &key_right, "KEY_RIGHT", cv_scan, 0,
                      &key_up, "KEY_UP", cv_scan, 0,
+					 &key_left, "KEY_LEFT", cv_scan, 0,
                      &key_down, "KEY_DOWN", cv_scan, 0,
                      &key_strafeleft, "KEY_STRAFELEFT", cv_scan, 0,
                      &key_straferight, "KEY_STRAFERIGHT", cv_scan, 0,

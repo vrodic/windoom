@@ -60,6 +60,7 @@
 
 #define SB_SIZE       20480
 #define NUM_DSBUFFERS 256
+#define SAMPLERATE	  11025	// Hz // vrodic: 04-02-1998
 
 BOOL SetupDirectSound();
 void ShutdownDirectSound(void);
@@ -923,8 +924,8 @@ BOOL SetupDirectSound()
     memset( &wfx, 0, sizeof(WAVEFORMATEX) );
     wfx.wFormatTag         = WAVE_FORMAT_PCM;      
     wfx.nChannels          = 2;
-    wfx.nSamplesPerSec     = 11025;
-    wfx.nAvgBytesPerSec    = 11025*2*1;
+    wfx.nSamplesPerSec     = SAMPLERATE;
+    wfx.nAvgBytesPerSec    = SAMPLERATE*2*1;
     wfx.nBlockAlign        = 2; // ?
     wfx.wBitsPerSample     = (WORD)8;
     wfx.cbSize             = 0;
@@ -962,9 +963,9 @@ void CreateSoundBuffer(int Channel, int length, unsigned char *data)
     memset( &pcmwf, 0, sizeof(PCMWAVEFORMAT) );
     pcmwf.wf.wFormatTag         = WAVE_FORMAT_PCM;      
     pcmwf.wf.nChannels          = 1;
-    pcmwf.wf.nSamplesPerSec     = 11025;
+    pcmwf.wf.nSamplesPerSec     = SAMPLERATE;
     pcmwf.wf.nBlockAlign        = 1; // ?
-    pcmwf.wf.nAvgBytesPerSec    = 11025*1*1;
+    pcmwf.wf.nAvgBytesPerSec    = SAMPLERATE*1*1;
     pcmwf.wBitsPerSample        = (WORD)8;
 
     // Set up DSBUFFERDESC structure.

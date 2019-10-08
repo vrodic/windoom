@@ -157,10 +157,7 @@ void S_Init
   fprintf( stderr, "S_Init: default sfx volume %d\n", sfxVolume);
 
   numChannels = NUM_DSBUFFERS;
-
-  // Whatever these did with DMX, these are rather dummies now.
-  I_SetChannels();
-  
+ 
   S_SetSfxVolume(sfxVolume);
   // No music with Linux - another dummy.
   S_SetMusicVolume(musicVolume);
