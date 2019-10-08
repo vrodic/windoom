@@ -36,7 +36,6 @@
 
 void WriteDebug(char *);
 
-#define S_MAX_VOLUME		127
 
 // when to clip out sounds
 // Does not fit the large outdoor areas.
@@ -51,8 +50,6 @@ void WriteDebug(char *);
 
 #define S_ATTENUATOR		((S_CLIPPING_DIST-S_CLOSE_DIST)>>FRACBITS)
 
-// Adjustable by menu.
-#define NORM_VOLUME    		snd_MaxVolume
 
 #define NORM_PITCH     		128
 #define NORM_PRIORITY		64
@@ -61,21 +58,9 @@ void WriteDebug(char *);
 #define S_PITCH_PERTURB		1
 #define S_STEREO_SWING		(96*0x10000)
 
-// percent attenuation from front to back
-#define S_IFRACVOL		30
-
-#define NA			0
-#define S_NUMCHANNELS		2
 
 #define NUM_DSBUFFERS      256
 
-// Current music/sfx card - index useless
-//  w/o a reference LUT in a sound module.
-extern int snd_MusicDevice;
-extern int snd_SfxDevice;
-// Config file? Same disclaimer as above.
-extern int snd_DesiredMusicDevice;
-extern int snd_DesiredSfxDevice;
 
 
 

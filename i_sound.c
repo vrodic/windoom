@@ -75,10 +75,6 @@ extern int swap_stereo;
 ////////////////////////////////////////////////////////////////////////////
 
 
-// A quick hack to establish a protocol between
-// synchronous mix buffer updates and asynchronous
-// audio writes. Probably redundant with gametic.
-static int flag = 0;
 
 // The number of internal mixing channels,
 //  the samples calculated for each mixing step,
@@ -218,13 +214,13 @@ void *getsfx( char *sfxname, int *len )
 //
 int addsfx( int sfxid, int volume, int step, int seperation, void *origin )
    {
-    static unsigned short	handlenums = 0;
- 
     int		i;
-    int		rc = -1;
+
+    /*static unsigned short	handlenums = 0; // vrodic
+    int		rc = -1; 
     
     int		oldest = gametic;
-    int		oldestnum = 0;
+    int		oldestnum = 0;*/
     /*int		slot;
 
     int		rightvol;

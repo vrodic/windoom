@@ -1191,7 +1191,7 @@ M_DrawThermo
     }
     V_DrawScaledPatch (xx,y,0,W_CacheLumpName("M_THERMR",PU_CACHE));
 
-    V_DrawScaledPatch ((x+8) + thermDot*4,y,
+    V_DrawScaledPatch ((x+8) + thermDot*8,y,
 		       0,W_CacheLumpName("M_THERMO",PU_CACHE));
 }
 
