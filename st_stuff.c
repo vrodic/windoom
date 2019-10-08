@@ -80,15 +80,8 @@ void WriteDebug(char *);
 #define ST_TOGGLECHAT		KEY_ENTER
 
 // Location of status bar
-//#define ST_X				0
-#define ST_X				((SCREENWIDTH-ST_WIDTH)/2)
-//#define ST_X2				104
-#define ST_X2				((SCREENWIDTH/2)-56)
-
-//#define ST_FX  			143
-#define ST_FX  			((SCREENWIDTH/2)-17)
-//#define ST_FY  			169
-#define ST_FY  			(SCREENHEIGHT-31)
+#define ST_X			((SCREENWIDTH-ST_WIDTH)>>1)
+#define ST_FX  			(ST_X+143)
 
 // Should be set to patch width
 //  for tall numbers later on
@@ -98,7 +91,7 @@ void WriteDebug(char *);
 #define ST_NUMPAINFACES		5
 #define ST_NUMSTRAIGHTFACES	3
 #define ST_NUMTURNFACES		2
-#define ST_NUMSPECIALFACES		3
+#define ST_NUMSPECIALFACES	3
 
 #define ST_FACESTRIDE \
           (ST_NUMSTRAIGHTFACES+ST_NUMTURNFACES+ST_NUMSPECIALFACES)

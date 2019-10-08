@@ -64,11 +64,6 @@ int	  viewwindowy;
 byte *ylookup[MAXVIDHEIGHT]; 
 int   columnofs[MAXVIDWIDTH]; 
 
-// Color tables for different players,
-//  translate a limited part to another
-//  (color ramps used for  suit colors).
-//
-byte		translations[3][256];	
  
  
 

@@ -11,11 +11,11 @@ Project's tools are:
 			"Custom Build" with flags ""
 			"<Component 0xa>" with flags ""
 
-Creating temp file "C:\WINDOWS\TEMP\RSP4043.TMP" with contents </nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp".\Release/WinDoom.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c 
-"C:\DOOMSRC\windoom\i_sound.c"
+Creating temp file "C:\WINDOWS\TEMP\RSP92A4.TMP" with contents </nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp".\Release/WinDoom.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c 
+"C:\DOOMSRC\windoom\r_draw.c"
 >
-Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP4043.TMP" 
-Creating temp file "C:\WINDOWS\TEMP\RSP4044.TMP" with contents <dxguid.lib kernel32.lib user32.lib gdi32.lib dsound.lib ddraw.lib dinput.lib winmm.lib wsock32.lib /nologo /subsystem:windows /incremental:no /pdb:".\Release/WinDoom.pdb" /machine:I386 /out:".\Release/WinDoom.exe" 
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP92A4.TMP" 
+Creating temp file "C:\WINDOWS\TEMP\RSP92A5.TMP" with contents <dxguid.lib kernel32.lib user32.lib gdi32.lib dsound.lib ddraw.lib dinput.lib winmm.lib wsock32.lib /nologo /subsystem:windows /incremental:no /pdb:".\Release/WinDoom.pdb" /machine:I386 /out:".\Release/WinDoom.exe" 
 .\Release\am_map.obj
 .\Release\d_console.obj
 .\Release\d_items.obj
@@ -85,11 +85,15 @@ Creating temp file "C:\WINDOWS\TEMP\RSP4044.TMP" with contents <dxguid.lib kerne
 .\Release\wi_stuff.obj
 .\Release\z_zone.obj
 .\Release\windoom.res>
-Creating command line "link.exe @C:\WINDOWS\TEMP\RSP4044.TMP" 
+Creating command line "link.exe @C:\WINDOWS\TEMP\RSP92A5.TMP" 
 Compiling...
-i_sound.c
+r_draw.c
+C:\DOOMSRC\windoom\r_draw.c(110) : warning C4018: '>=' : signed/unsigned mismatch
+C:\DOOMSRC\windoom\r_draw.c(261) : warning C4018: '>=' : signed/unsigned mismatch
+C:\DOOMSRC\windoom\r_draw.c(325) : warning C4018: '>=' : signed/unsigned mismatch
+C:\DOOMSRC\windoom\r_draw.c(440) : warning C4018: '>' : signed/unsigned mismatch
 Linking...
 
 
 
-WinDoom.exe - 0 error(s), 0 warning(s)
+WinDoom.exe - 0 error(s), 4 warning(s)
